@@ -17,10 +17,10 @@ export class AppComponent {
         private exchange: ExchangeService,
     ) {
 
-        const password = window.prompt("Password", "NO_PASS");
+        const password = "no password";
 
         this.socket.receive().subscribe(e => console.log(e));
-        this.exchange.startKeyExchange("");
+        this.exchange.startKeyExchange(password);
         chat.sendMessage("Hello World!");
     }
 
